@@ -26,7 +26,7 @@ react-yui在每一个组件的源代码中都提供了示例，可以查看
 
 文件夹下的index.md查看配置项，以及code.md查看如果使用的示例。
 
-## 应用举例 ##】
+## 应用举例 ##
 
  1. 关联选择
  
@@ -45,6 +45,15 @@ react-yui在每一个组件的源代码中都提供了示例，可以查看
 ![日期][3]
 
 
+4. 日期选项（月）
+ ![此处输入图片的描述][4]
+
+
   [1]: https://github.com/forthealllight/react-yui/blob/master/images/associate.gif
   [2]: https://github.com/forthealllight/react-yui/blob/master/images/canlendar.gif
   [3]: https://github.com/forthealllight/react-yui/blob/master/images/dateDay.gif
+  [4]: https://github.com/forthealllight/react-yui/blob/master/images/dateMonth.gif
+  
+  
+  
+  更多组件，敬请期待
