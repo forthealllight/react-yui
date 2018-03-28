@@ -1,0 +1,78 @@
+@import "../../assets/sass/var.scss";
+.m-page{
+	position: relative;
+	display: table;
+	margin:  0 auto;
+
+	a{
+		display: inline-block;
+		color: $baseTextColor;
+		border: 1px solid $baseBorderColor;
+		border-left-width: 0;
+		display: table-cell;
+		line-height: 22px;
+		padding: 0 10px;
+		&:nth-of-type(1){
+			border-left-width: 1px;
+		}
+		&.current{
+			color: $baseGreenColor;
+			font-size: 14px;
+		}
+		&.disabled{
+			color: #ccc;
+		}
+		&.prevPage{
+			&::after{
+				content: "\003C \003C";
+				display: inline-block;
+			}
+		}
+		&.nextPage{
+			&::after{
+				content: "\003E \003E";
+				display: inline-block;
+			}
+		}
+		&:hover{
+			color: $baseLinkColor;
+		}
+	}
+	&.mode2{
+		margin: 0;
+		a{
+			background: #fff;
+			color: $baseTextColor;
+			border: none;
+			margin: 0 4px;
+			box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+			display: inline-block;
+			border-radius: 4px;
+			padding: 0 8px;
+			&.disabled{
+				background: #edeef3;
+				color: #98999e;
+			}
+			&.current{
+				color: #fff;
+				background: #58c9f3;
+				font-size: 12px;
+			}
+			&.prevPage{
+				&::after{
+					content: "<";
+					display: inline-block;
+				}
+			}
+			&.nextPage{
+				&::after{
+					content: ">";
+					display: inline-block;
+				}
+			}
+			&:hover{
+				color: $baseLinkColor;
+			}
+		}
+	}
+}

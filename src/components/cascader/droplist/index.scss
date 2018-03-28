@@ -1,0 +1,63 @@
+@import "../../../assets/sass/var.scss";
+.select-list-wrap{
+	border-radius: 2px;
+	background: #fff;
+	min-width: 80px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	color: #333;
+	position: absolute;
+	.select-result-item{
+		position: relative;
+		&:hover{
+			>.select-result-label{
+				background: $baseLinkColor;
+				color: #fff;
+			}
+		}
+		&.selected{
+			>.select-result-label{
+				background: $baseLinkColor;
+				color: #fff;
+			}
+			> .select-list-wrap{
+				display: block;
+			}
+		}
+	}
+	.select-result-label {
+		padding: 3px 15px;
+		box-sizing: border-box;
+		position: relative;
+		line-height: 22px;
+		cursor: pointer;
+		&.hasChild{
+			&::after{
+				content:"";
+				display: inline-block;
+				border: 4px solid transparent;
+				border-left-color: #ccc;
+				border-right-width: 0;
+				border-left-width: 5px;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -4px;
+			}
+		}
+
+
+		&.selected{
+			background: $baseLinkColor;
+			color: #fff;
+		}
+	}
+	li {
+		.select-list-wrap{
+			position: absolute;
+		    left: 100%;
+		    top: 0;
+		    display: none;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+@import "../../assets/sass/var.scss";
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="phone"],
+input[type="number"],
+input[type="password"]{
+
+
+
+    &:hover {
+        border-color: $baseLinkColor;
+    }
+
+    &:focus {
+        border-color: $baseLinkColor;
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    }
+
+    &:disabled{
+        background: #f5f5f5;
+        &:hover{
+            border-color: $baseBorderColor;
+        }
+        &:focus{
+            border-color: $baseBorderColor;
+        }
+    }
+
+
+}
+
+.input-number {
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid $baseBorderColor;
+    color: $baseTextColor;
+    font-size: 12px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    background: #ffffff;
+    vertical-align: middle;
+    width: 80px;
+    height: 28px;
+    position: relative;
+    &:hover {
+        border-color: $baseLinkColor;
+        .input-number-handler-wrap {
+            opacity: 1;
+        }
+    }
+    @at-root{
+        &-handler-wrap {
+            width: 22px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 0 4px 4px 0;
+            border-left: 1px solid $baseBorderColor;
+            background: #fff;
+            opacity: 0;
+            transition: opacity 0.24s linear 0.1s;
+            .icon-select-up {
+
+            }
+            .icon-select-down {
+                border-top: 1px solid $baseBorderColor;
+            }
+        }
+        &-handler {
+            text-align: center;
+            height: 50%;
+            color: $grayColor;
+            width: 100%;
+            overflow: hidden;
+            font-size: 12px;
+            display: block;
+            line-height: 1.2;
+            cursor: pointer;
+        }
+        &-input-wrap {
+
+        }
+
+    }
+    .input-number-input {
+        color: $baseTextColor;
+        padding: 0 12px;
+        font-size: 12px;
+        line-height: 26px;
+        border-radius: 3px;
+        background: #ffffff;
+        box-sizing: border-box;
+        width: 100%;
+        vertical-align: middle;
+        border: none;
+        height: 26px;
+    }
+}

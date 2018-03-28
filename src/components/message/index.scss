@@ -1,0 +1,113 @@
+@import "../../assets/sass/var.scss";
+$successColor: #00A854;//#00A854 78be49
+$errorColor: #F04134;//#F04134 c93030
+.m-tip-wrap{
+    position: fixed;
+    top: 10px;
+    z-index: 9999;
+    color: #fff;
+    left: 50%;
+    min-width: 200px;
+    margin-left: -150px;
+    animation: flipDownInX 0.8s;
+    transform-origin: 50% 0%;
+
+    color: $baseTextColor;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    .tip_close{
+    	position: absolute;
+    	right: 10px;
+    	color: $baseTextColor;
+    	&::after{
+    		content: "\e625";
+    		display: inline-block;
+    		width: 14px;
+    		height: 14px;
+    		vertical-aling: middle;
+    	}
+    }
+}
+.u-success-tip {
+	// background: #e4f2db;
+	padding: 5px 10px;
+	// border: 1px solid $successColor;
+	// color: $successColor;
+
+
+	.tip_success{
+		padding-right: 5px;
+		&::before{
+			content: "\e633";
+			display: inline-block;
+			border-radius: 100%;
+			background: $successColor;
+			color: #fff;
+		    width: 14px;
+		    height: 14px;
+		    line-height: 14px;
+		    font-size: 12px;
+		    text-align: center;
+		}
+	}
+
+}
+
+.u-error-tip {
+	// background: #ffd3d3;
+	// border: 1px solid $errorColor;
+	padding: 5px 10px;
+	// color: $errorColor;
+	// .tip_close{
+	// 	color: $errorColor;
+	// }
+    .tip_error {
+        padding-right: 5px;
+        &::before{
+            content: "\e625";
+            display: inline-block;
+            border-radius: 100%;
+            background: $errorColor;
+            color: #fff;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+}
+
+@keyframes flipDownInX {
+    100% {
+        transform: translate(0%);
+        opacity: 1;
+    }
+
+    0% {
+        transform: perspective(400px) rotate3d(1,0,0,-90deg);
+        transition-timing-function: ease-in;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(1,0,0,20deg);
+        transition-timing-function: ease-out;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(1,0,0,-10deg);
+        transition-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(1,0,0,5deg);
+        transition-timing-function: ease-out;
+    }
+
+    100% {
+        transform: perspective(400px);
+    }
+}

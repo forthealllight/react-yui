@@ -1,0 +1,167 @@
+@import "../../assets/sass/var.scss";
+.m-component-select {
+	box-sizing: border-box;
+	display: inline-block;
+	position: relative;
+	color: $baseTextColor;
+	font-size: 12px;
+	vertical-align: middle;
+	@at-root{
+		.m-select-section {
+			outline: none;
+			cursor: pointer;
+			background: #fff;
+			box-sizing: border-box;
+			display: block;
+			border-radius: 4px;
+			border: 1px solid $baseBorderColor;
+			transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+			&:hover{
+				border-color: $baseLinkColor;
+			}
+			.select-section__render{
+				display: block;
+				margin: 0 8px;
+				position: relative;
+				line-height: 26px;
+				&:after{
+					content: "";
+					display: block;
+					clear: both;
+					pointer-events: none;
+					width: 0;
+				}
+			}
+			.select-section-selected-value {
+				max-width: 100%;
+				padding-right: 14px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				float: left;
+				box-sizing: border-box;
+			}
+			&.select-open {
+				.select-arrow {
+					transform: rotate(180deg);
+				}
+			}
+			.select-arrow {
+				position: absolute;
+				top: 50%;
+				right: 8px;
+				margin-top: -6px;
+				line-height: 1;
+				transition: transform 0.2s ease;
+				transform-origin: 9px 6px;
+			}
+		}
+	}
+}
+.m-select-dropdown-hidden {
+	display: none;
+}
+.m-component-select-dropdown{
+	background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    box-sizing: border-box;
+    z-index: 1050;
+    top: 20px;
+    // left: -9999px;
+    // top: -9999px;
+    position: absolute;
+    outline: none;
+    overflow: hidden;
+    font-size: 12px;
+    @at-root {
+    	.m-component-select-dropdown-menu {
+				li{
+					text-align:center;
+					cursor:pointer;
+				}
+		    outline: none;
+		    margin-bottom: 0;
+		    padding-left: 0;
+		    list-style: none;
+		    max-height: 250px;
+		    overflow: auto;
+    	}
+    	.m-component-select-dropdown-menu-item {
+    		position: relative;
+		    display: block;
+		    padding: 7px 16px;
+		    font-weight: normal;
+		    color: $baseTextColor;
+		    cursor: pointer;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    transition: background 0.3s ease;
+		    &.hoverItem {
+		    	background-color: $tableSelectedColor;
+		    }
+		    &.selectedItem {
+		    	background-color: #f7f7f7;
+			    font-weight: bold;
+			    color: $grayColor2;
+		    }
+
+    	}
+    }
+}
+
+.slide-up-enter {
+	animation-duration: 0.2s;
+	animation-fill-mode: both;
+	animation-play-state: paused;
+	opacity: 0;
+  	animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+	@at-root{
+		&.slide-up-enter-active {
+			-webkit-animation-name: antSlideUpIn;//antSlideUpOut
+			animation-play-state: running;
+			// animation-name: antSlideDownIn;//有时候下拉框的东西在上面antSlideDownOut
+		}
+	}
+}
+
+.slide-up-leave {
+	animation-duration: 0.2s;
+	animation-fill-mode: both;
+	animation-play-state: paused;
+	animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+	@at-root{
+		&.slide-up-leave-active {
+			animation-name: antSlideUpOut;//antSlideDownOut
+			animation-play-state: running;
+		}
+	}
+}
+
+@keyframes antSlideUpIn {
+  	0% {
+    	opacity: 0;
+    	transform-origin: 0% 0%;
+    	transform: scaleY(0.8);
+  	}
+  	100% {
+    	opacity: 1;
+    	transform-origin: 0% 0%;
+    	transform: scaleY(1);
+  	}
+}
+
+@keyframes antSlideUpOut{
+	0% {
+	    opacity: 1;
+	    transform-origin: 0% 0%;
+	    transform: scaleY(1);
+  	}
+  	100% {
+	    opacity: 0;
+	    transform-origin: 0% 0%;
+	    transform: scaleY(0.8);
+  	}
+}

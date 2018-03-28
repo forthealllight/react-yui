@@ -1,0 +1,53 @@
+@import "../../assets/sass/var.scss";
+.select-drop{
+	position: relative;
+	display: inline-block;
+	float:left;
+	.select-hd{
+		position: relative;
+		cursor: pointer;
+		border: 1px solid #ccc;
+	    border-radius: 5px;
+	    display: inline-block;
+	    width: 80px;
+	    height: 30px;
+	    box-sizing: border-box;
+	    &:hover{
+	    	border-color: $baseLinkColor;
+	    }
+		.select-text{
+			position: absolute;
+			box-sizing: border-box;
+			color: #333;
+			height: 28px;
+			line-height: 28px;
+			display: inline-block;
+			padding: 0 10px;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    width: 100%;
+		    overflow: hidden;
+			border-right: 1px solid #ccc;
+		}
+		&::after{
+			content:"";
+			display: inline-block;
+			border: 4px solid transparent;
+			border-top-color: #ccc;
+			border-bottom-width: 0;
+			border-top-width: 5px;
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			margin-left: 10px;
+		}
+	}
+	.select-bd{
+		// box-shadow: rgba(76,86,103,0.247059) 0 0 1px 0,rgba(31,37,50,0.317647) 0 2px 18px 0;
+		position: absolute;
+		transition: all 1s;
+		top: 30px;
+
+
+	}
+}

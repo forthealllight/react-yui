@@ -1,0 +1,32 @@
+@import "../../assets/sass/var.scss";
+.u-datepicker {
+	position: relative;
+	z-index: 20;
+	.datepicker-header {
+		.datepicker-input{
+			color: $baseTextColor;
+		    padding: 0 12px;
+		    font-size: 12px;
+		    line-height: 26px;
+		    height: 28px;
+		    border-radius: 3px;
+		    background: #ffffff;
+		    border: 1px solid $baseBorderColor;
+		    box-sizing: border-box;
+		    width: 100%;
+		    vertical-align: middle;
+
+			width: 160px;
+			padding: 0 10px;
+			cursor:pointer;
+		}
+		.calendarIcon {
+			cursor: pointer;
+			position: relative;
+			top: 1px;
+			right: 23px;
+			font-size: 12px;
+		}
+	}
+
+}

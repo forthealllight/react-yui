@@ -1,0 +1,154 @@
+.u-tooltip{
+	padding: 5px 0 8px;
+    position: absolute;
+    z-index: 1060;
+    display: block;
+    visibility: visible;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: .9;
+    .u-tooltip-arrow {
+	    position: absolute;
+	    width: 0;
+	    height: 0;
+	    border-color: transparent;
+	    border-style: solid;
+    }
+    .arrow-right {
+        bottom: 3px;
+        border-width: 5px 5px 5px 0;
+        border-right-color: #373737;
+        left: 0;
+        margin-left: -5px;
+        margin-top: -5px;
+        top: 50%;
+    }
+    .arrow-left {
+
+        border-width: 5px 0 5px 5px;
+        border-left-color: #373737;
+        left: 100%;
+        top: 50%;
+        margin-top: -10px;
+
+    }
+    .arrow-bottom {
+
+        top: 0;
+        border-width: 0 5px 5px 5px;
+        border-bottom-color: #373737;
+        left: 50%;
+        margin-left: -5px;
+    }
+    .arrow-top {
+        border-width: 5px 5px 0 5px;
+        border-top-color: #373737;
+        left: 50%;
+        margin-left: -5px;
+        margin-top: -8px;
+        top: 100%;
+    }
+    .u-tooltip-inner {
+    	max-width: 250px;
+	    padding: 6px 10px;
+	    color: #fff;
+	    text-align: left;
+	    text-decoration: none;
+	    background-color: #373737;
+	    border-radius: 6px;
+	    box-shadow: 0 1px 6px hsla(0,0%,39%,.2);
+	    min-height: 20px;
+    }
+}
+.zoom-big-enter{
+	-webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+    animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+.zoom-big-enter-active{
+	-webkit-animation-name: antZoomBigIn;
+    animation-name: antZoomBigIn;
+    -webkit-animation-play-state: running;
+    animation-play-state: running
+}
+@keyframes antZoomBigIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.zoom-big-leave{
+	-webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+    animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+
+}
+.zoom-big-leave-active {
+	-webkit-animation-name: antZoomBigOut;
+    animation-name: antZoomBigOut;
+    -webkit-animation-play-state: running;
+    animation-play-state: running
+}
+
+@keyframes antZoomBigOut {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+}
+.u-tooltip-hidden{
+	display: none;
+}
+
+.tip-content-item{
+    .tip-content-title{
+        margin: 0;
+        padding: 0 16px;
+        line-height: 32px;
+        height: 32px;
+        border-bottom: 1px solid #e9e9e9;
+        color: #666;
+        font-weight: 400;
+    }
+    .tip-content-inner{
+        padding: 8px 16px;
+        line-height: 22px;
+    }
+    .tip-name{
+        display: inline-block;
+        min-width: 43px;
+    }
+    .tip-number{
+        padding: 0 2px;
+        color: #2db7f5;
+    }
+    .tip-strong {
+        padding: 0 2px;
+        color: #ff6c60;
+    }
+}

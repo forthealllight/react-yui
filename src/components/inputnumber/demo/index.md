@@ -1,0 +1,92 @@
+InputNumber
+数字输入框
+---
+
+通过鼠标或键盘，输入范围内的数值。
+
+## 如何使用
+当需要获取标准数值时。
+
+
+## API
+
+<table>
+    <tr>
+        <th>成员</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+    </tr>
+    <tr>
+        <td>min</td>
+        <td>最小值</td>
+        <td>number</td>
+        <td>-Infinity</td>
+    </tr>
+    <tr>
+        <td>max</td>
+        <td>最大值</td>
+        <td>number</td>
+        <td>Infinity</td>
+    </tr>
+    <tr>
+        <td>newClass</td>
+        <td>自定义类名</td>
+        <td>string</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td>当前值</td>
+        <td>number</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>step</td>
+        <td>每次改变步数，可以为小数</td>
+        <td>number</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>precision</td>
+        <td>数值精度</td>
+        <td>number</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>defaultValue</td>
+        <td>初始值</td>
+        <td>number</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>onChange</td>
+        <td>变化回调</td>
+        <td>Function(value: number | string)</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>disabled</td>
+        <td>禁用</td>
+        <td>boolean</td>
+        <td>false</td>
+    </tr>
+     <tr>
+        <td>showHandler</td>
+        <td>是否可以按步加载</td>
+        <td>boolean</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>isPositive</td>
+        <td>是否包含小数点</td>
+        <td>boolean</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>maxLength</td>
+        <td>输入框最多能输入多少长度</td>
+        <td>number</td>
+        <td></td>
+    </tr>
+</table>

@@ -1,0 +1,103 @@
+@import "var.scss";
+html {
+	min-height: 100%;
+	background: #fff;
+	color: $baseTextColor;
+	font: 12px/1.5  Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+a {
+	color: $baseTextColor;
+	text-decoration: none;
+	&:hover{
+		color: $baseLinkColor;
+	}
+}
+
+a:active {
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	/* 移除搜索文本框会出现的"叉叉" */
+	display: none;
+}
+
+input, input[type="search"], textarea, button {
+	box-sizing: border-box;
+	vertical-align: middle;
+	&:focus {
+        outline: 0 none;
+    }
+}
+
+a, input, textarea, button {
+	outline: 0;
+	
+}
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none outside;
+}
+
+textarea {
+    resize: none;
+}
+*{
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,button,menu{
+    margin:0;
+    padding:0;
+    outline:none;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+// ::-webkit-scrollbar-button 滚动条两端的按钮
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px transparent;
+}
+// ::-webkit-scrollbar-track-piece 内层滚动槽
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);
+}
+// ::-webkit-scrollbar-corner 边角
+// ::-webkit-resizer 定义右下角拖动块的样式
+scrollbar-arrow-color {
+    color: rgba(0,0,0,0.2);
+}
+scrollbar-face-color {
+    color: rgba(0,0,0,0.2);
+} 
+// scrollbar-3dlight-color: color; /立体滚动条亮边的颜色/
+// scrollbar-highlight-color: color; /滚动条的高亮颜色（左阴影？）/
+// scrollbar-shadow-color: color; /立体滚动条阴影的颜色/
+// scrollbar-darkshadow-color: color; /立体滚动条外阴影的颜色/
+scrollbar-track-color {
+    color: rgba(0,0,0,0.2);
+}
+scrollbar-base-color{
+    color: rgba(0,0,0,0.2);
+}; 
+

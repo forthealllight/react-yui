@@ -1,0 +1,47 @@
+@import "../../assets/sass/var.scss";
+.u-checkbox-label{
+    cursor: pointer;
+}
+
+.u-checkbox {
+    display: none;
+    & + .u-imitate-checkbox {
+        text-align: center;
+        border: 1px solid $grayColor1;
+        border-radius: 3px;
+        width: 12px;
+        height: 12px;
+        line-height: 12px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        transition: border-color .1s cubic-bezier(.71,-.46,.29,1.46),
+                    background-color .1s cubic-bezier(.71,-.46,.29,1.46);
+        &::after{
+            content: "";
+            font-size: 12px;
+            vertical-align: middle;
+            transition: all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+        }
+    }
+    &:checked + .u-imitate-checkbox {
+        &::after{
+            content: "\e633";
+        }
+    }
+    &:disabled + .u-imitate-checkbox {
+        opacity: 0.5;
+        &::before{
+            content: "";
+            background: $grayColor;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            opacity: 0.2;
+            left: 0;
+            top: 0;
+        }
+    }
+}

@@ -1,0 +1,250 @@
+$baseTextColor: #7b8499;
+$baseLinkColor: #2db7f5;//蓝色  15a4fa 108ee9
+$baseGreenColor: #41cac0;//绿色
+
+$baseBorderColor: #d9d9d9;
+$baseBackgroundColor: #f1f2f7;//背景色
+
+$grayColor: #999;
+$grayColor1: #ccc;
+$grayColor2: #666;//选中时正文的颜色--新加
+
+$tableEvenColor: #fbfcfe;//列表中背景色 f8fafb
+$tableSelectedColor: #f0f8fe;//列表选中的颜色
+$tableBorderColor: #eef3f7;
+$crumbIconFontColor: #4c4c4c;
+$redColor: #ff6c60;//红色
+$tipColor: #bdc2cc;//备注的颜色
+//图表中的颜色
+$chartBlueColor: #7dd7db;//蓝绿色
+$chartRedColor: #ff6c60;//红色
+$chartGreenColor: #a9d96c;//绿色
+$chartGrayColor: #e4e4e4;//灰色
+$chartYellowColor: #ffaa00;//黄色
+
+$treeSelectedColor: #e8f2fe;
+
+
+.m-role-tree {
+	&.m-multitreeview {
+		.roleTree_list {
+			padding-left: 34px;
+			//line-height: 18px;
+		}
+		.u-arrow{
+			left: -30px;
+
+		}
+	}
+
+	.roleTree_list {
+		padding-left: 16px;
+		//line-height: 22px;
+		// overflow: hidden;
+	}
+	.tree_item {
+		position: relative;
+		padding: 3px 0;
+		.iconfont {
+			cursor: pointer;
+		}
+		.u-arrow, .mulTreeCheck{
+			position: absolute;
+			top: 6px;
+			line-height: 1;
+		}
+
+	}
+	.u-arrow{
+		left: -12px;
+		font-size: 14px;
+	}
+	.icon-arrow-down {
+		margin-top: -3px;
+	}
+
+	.u-check {
+		text-align: center;
+		border: 1px solid $grayColor1;
+		border-radius: 3px;
+		width: 14px;
+		height: 14px;
+		line-height: 1;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		&:hover{
+			border-color: $baseLinkColor;
+		}
+		&.mulTreeCheck{
+			left: -14px;
+		}
+	}
+	.z-check{
+		&::after{
+			content: "\e633";
+			font-size: 12px;
+			vertical-align: top;
+			color: $baseLinkColor;
+
+		}
+	}
+	.z-part{
+		&::after{
+			content: "";
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			background: $baseLinkColor;
+			border-radius: 2px;
+			font-size: 12px;
+			vertical-align: middle;
+			position: absolute;
+			top: 2px;
+    		left: 2px;
+		}
+	}
+	.disabled{
+		cursor: default !important;
+		opacity: 0.5;
+		&:hover{
+			border-color: $grayColor1;
+		}
+		&::before{
+		    content: "";
+		    background: $grayColor1;
+		    display: inline-block;
+		    width: 14px;
+		    height: 14px;
+		    position: absolute;
+		    opacity: 0.2;
+		    left: 0;
+		    top: 0;
+		}
+		&::after{
+			color: $baseTextColor;
+		}
+	}
+	.view{
+		cursor: default !important;
+		border: none;
+
+	}
+	.tree_name {
+		padding: 3px 5px;
+		position: relative;
+		cursor: pointer;
+		white-space: nowrap;
+		line-height: 1;
+		display: inline-block;
+	}
+	.icon-loading {
+		color: $baseLinkColor;
+		animation: loading 1s infinite linear;
+		width: 14px;
+		height: 14px;
+		font-size: 14px;
+		vertical-align: middle;
+		line-height: 1;
+		display: inline-block;
+	}
+	.tree_name_link {
+		display: inline-block;
+		padding: 1px 5px;
+		border-radius: 2px;
+		background: transparent;
+		transition: all 0.3s ease;
+		&:hover {
+			color: $baseTextColor;
+			background: $treeSelectedColor;
+		}
+	}
+	.select_item {
+		// background: $treeSelectedColor;
+		.tree_name_link {
+			color: $baseTextColor;
+			background: $treeSelectedColor;
+		}
+	}
+	.action_list{
+		position: absolute;
+		top: 0;
+		left: 100px;
+	}
+	.action_item{
+		display: inline-block;
+	}
+}
+.tree-hide {
+	display: none;
+}
+.tree-show {
+	overflow: hidden;
+	transition: height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.tree-up-enter {
+	animation-duration: 0.2s;
+	// animation-fill-mode: both;
+	// animation-play-state: paused;
+	opacity: 0;
+  	animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+	@at-root{
+		&.tree-up-enter-active {
+			-webkit-animation-name: antTreeUpIn;//antSlideUpOut
+			// animation-play-state: running;
+			// animation-name: antSlideDownIn;//有时候下拉框的东西在上面antSlideDownOut
+		}
+	}
+}
+
+@keyframes antTreeUpIn {
+  	0% {
+    	opacity: 0;
+    	transform-origin: 50% 0%;
+    	transform: scaleY(0.2);
+  	}
+  	100% {
+    	opacity: 1;
+    	transform-origin: 50% 0%;
+    	transform: scaleY(1);
+  	}
+}
+
+.tree-collapse {
+	animation-duration: 0.2s;
+	// animation-fill-mode: both;
+	// animation-play-state: paused;
+  	animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+	@at-root{
+		&.tree-collapse-active {
+			-webkit-animation-name: treeCollapse;//antSlideUpOut
+			// animation-play-state: running;
+			// animation-name: antSlideDownIn;//有时候下拉框的东西在上面antSlideDownOut
+		}
+	}
+}
+
+@keyframes treeCollapse {
+  	0% {
+	    opacity: 1;
+	    transform-origin: 0% 0%;
+	    transform: scaleY(1);
+  	}
+  	100% {
+	    opacity: 0;
+	    transform-origin: 0% 0%;
+	    transform: scaleY(0.8);
+  	}
+}
+
+@keyframes loading {
+	0% {
+    	transform: rotate(0);
+    	transform-origin: 50% 50%;
+  	}
+  	100% {
+    	transform: rotate(360deg);
+    	transform-origin: 50% 50%;
+  	}
+}

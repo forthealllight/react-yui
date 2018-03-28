@@ -1,0 +1,118 @@
+@import "../../assets/sass/var.scss";
+.m-index-reminder{
+	background: #fff;
+	.reminder-nav{
+		background: $tableEvenColor;
+		height: 40px;
+		line-height: 40px;
+		vertical-align: middle;
+		border-radius: 6px 6px 0 0;
+		overflow: hidden;
+		padding-left: 15px;
+		box-sizing: border-box;
+		font-size: 14px;
+		position: absolute;
+	}
+	.m-index-reminder-wrap {
+		height: 340px;
+	}
+
+}
+.u-reminder-calendar-header {
+	text-align: right;
+	background: $tableEvenColor;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 10px;
+	.directSubCheckbox{
+		& + .u-imitate-checkbox{
+			border-color: $baseLinkColor;
+		}
+		&:checked + .u-imitate-checkbox{
+			background: $baseLinkColor;
+			color: #fff;
+		}
+	}
+	.calendar-select {
+	    width: 75px;
+	}
+
+}
+.u-reminder-calendar{
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	.reminder-calendar-header {
+		border-top: 1px solid $tableBorderColor;
+		line-height: 18px;
+		text-align: right;
+		padding: 5px 12px 0 0;
+	}
+	td {
+
+	}
+	.notCurrentMonth {
+		color: $grayColor1;
+	}
+	.calendar-selected-date{
+		.reminder-calendar-date{
+			border-top: 2px solid $baseLinkColor;
+			background: #eaf8fe;
+		}
+	}
+	.reminder-calendar-date{
+		border-top: 1px solid $tableBorderColor;
+		height: 46px;
+		padding: 4px 8px;
+		margin: 0 4px;
+		cursor: pointer;
+		position: relative;
+		box-sizing: border-box;
+		&:hover{
+			background: #eaf8fe;
+		}
+	}
+	.reminder-calendar-value{
+		text-align: right;
+		height: 22px;
+		line-height: 22px;
+	}
+	.reminder-calendar-icons{
+		position: absolute;
+		bottom: 0;
+		.iconfont{
+			font-size: 14px;
+			padding: 0 2px;
+		}
+	}
+
+
+	.birthday {
+		&:after {
+			content: "\e64a";
+			color: #ffaa00;
+		}
+	}
+
+	.anniversary{
+		&:after {
+			content: "\e64d";
+			color: #56abe4;
+			font-size: 12px;
+		}
+	}
+	.expire{
+		&:after {
+			content: "\e64f";
+			color: #eb4f38;
+			font-size: 15px;
+		}
+	}
+
+	.positive{
+		&:after {
+			content: "\e651";
+			color: #00bb9c;
+		}
+	}
+}
